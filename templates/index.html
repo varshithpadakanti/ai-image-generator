@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt to picture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>Describe it. Get an image.</h1>
+  <p class="sub">Stable Diffusion, 512×512. Be specific about subject, style and light.</p>
+
+  <form id="f">
+    <label for="prompt">Prompt</label>
+    <textarea id="prompt" maxlength="300" rows="3" required
+      placeholder="A lighthouse on a cliff at dawn, soft fog, oil painting"></textarea>
+    <button id="go">Generate image</button>
+  </form>
+
+  <p id="status" role="status"></p>
+  <figure id="out" hidden>
+    <img id="img" alt="Generated image">
+    <figcaption><a id="dl" download="image.png">Download PNG</a></figcaption>
+  </figure>
+  <p class="small">Model: {{ model }}</p>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
